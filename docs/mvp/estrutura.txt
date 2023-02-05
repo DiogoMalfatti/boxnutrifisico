@@ -1,0 +1,18 @@
+-iniciar o projeto.
+.github
+.github pages
+
+-criar um pagina com estrutura basica responsiva.
+01 - cdn ? || arquivos internos ?
+.prefiro arquivos internos, depois de pronto não tem o que mexer caso haja alguma atualização.
+.isso vai depender da velocidade na hora do funcionamento.
+
+02 - responsividade
+.importancias
+TV(importante 01)
+Desktop
+Notebook
+tablet(menos importante 03)
+Mobile(importante 02)
+
+-criar um menu responsivo.
