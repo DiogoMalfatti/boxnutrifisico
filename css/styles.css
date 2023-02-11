@@ -1,0 +1,9 @@
+.imgs {
+  width: 100%;
+  max-height: 90vh;
+  /* object-fit: cover; */
+  /* overflow-clip-margin: content-box; */
+  /* overflow: clip; */
+  /* vertical-align: middle; */
+  border-style: none;
+}
