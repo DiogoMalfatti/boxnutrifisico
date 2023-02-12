@@ -17,6 +17,7 @@
     <!-- js -->
     <script src="bootstrap5/js/bootstrap.min.js" defer></script>
     <!-- BOOTSTRAP 5 -->
+    <script src="/js/scriptRodaTreino.js" defer></script>
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <!-- ❌ fazer favivon -->
@@ -90,9 +91,9 @@
               Quantas seções ?
             </button>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">1</a></li>
-              <li><a class="dropdown-item" href="#">2</a></li>
-              <li><a class="dropdown-item" href="#">3</a></li>
+              <li><input type="checkbox" class="dropdown-item" value="1">1</li>
+              <li><input type="checkbox" class="dropdown-item" value="2">2</li>
+              <li><input type="checkbox" class="dropdown-item" value="3">3</li>
               <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" href="#">Separated link</a></li>
             </ul>
@@ -102,9 +103,9 @@
               Tempo de seção ?
             </button>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">10</a></li>
-              <li><a class="dropdown-item" href="#">20</a></li>
-              <li><a class="dropdown-item" href="#">30</a></li>
+              <li><input type="checkbox" class="dropdown-item" value="10">10</li>
+              <li><input type="checkbox" class="dropdown-item" value="10">20</li>
+              <li><input type="checkbox" class="dropdown-item" value="10">30</li>
               <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" href="#">Separated link</a></li>
             </ul>
@@ -114,10 +115,10 @@
               Quais exercícios ?
             </button>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">burpe</a></li>
-              <li><a class="dropdown-item" href="#">salto</a></li>
-              <li><a class="dropdown-item" href="#">swing</a></li>
-              <li><a class="dropdown-item" href="#">poli</a></li>
+              <li><input type="checkbox" class="dropdown-item" value="burpe">burpe</li>
+              <li><input type="checkbox" class="dropdown-item" value="salto">salto</li>
+              <li><input type="checkbox" class="dropdown-item" value="swing">swing</li>
+              <li><input type="checkbox" class="dropdown-item" value="poli">poli</li>
               <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" href="#">Separated link</a></li>
             </ul>
@@ -127,9 +128,9 @@
               Tempo de descanço ?
             </button>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">10</a></li>
-              <li><a class="dropdown-item" href="#">20</a></li>
-              <li><a class="dropdown-item" href="#">30</a></li>
+              <li><input type="checkbox" class="dropdown-item" value="10">10</li>
+              <li><input type="checkbox" class="dropdown-item" value="10">20</li>
+              <li><input type="checkbox" class="dropdown-item" value="10">30</li>
               <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" href="#">Separated link</a></li>
             </ul>
@@ -138,5 +139,43 @@
       </div>
     </div>
     <!-- linha Construção de treino -->
+    <!-- preview treinos -->
+    <div class="container testecontainer">
+      <div class="row testerow">
+        <div class="col-12 col-md-8 testecol">
+          <h1>teste</h1>
+          <!-- COMEÇAR -->
+          <div id="vaiComeçar"></div>
+          <div id="tempoComeçar"></div>
+          <div id="começou"></div>
+          <!-- COMEÇAR -->
+          <!-- TREINAR -->
+          <div id="treinar"></div>
+          <div id="tempoExercicio"></div>
+          <div id="acabouTreino">fazer essa </div>
+          <!-- TREINAR -->
+          <!-- DESCANSAR -->
+          <div id="descanso"></div>
+          <div id="tempoDescanso"></div>
+          <!-- DESCANSAR -->
+        </div>
+        <div class="col-12 col-md-4 testecol">
+          <h1>teste</h1>
+          <ul>
+            <li>inicio</li>
+            <li>burpe</li>
+            <li>descanso</li>
+            <li>salto</li>
+            <li>descanso</li>
+            <li>swing</li>
+            <li>descanso</li>
+            <li>poli</li>
+            <li>fim</li>
+          </ul>
+        </div>
+        <button id="start-button">Rodar treino</button>
+      </div>
+    </div>
+    <!-- preview treinos -->
   </body>
 </html>
