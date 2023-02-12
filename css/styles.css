@@ -7,3 +7,9 @@
   /* vertical-align: middle; */
   border-style: none;
 }
+.teste {
+  border: 1px solid red;
+}
+.button-padding {
+  margin-left: 20px;
+}

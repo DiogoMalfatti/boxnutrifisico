@@ -10,6 +10,8 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
     />
+    <!-- pooper js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
     <!-- css -->
     <link rel="stylesheet" href="bootstrap5/css/bootstrap.min.css" />
     <!-- js -->
@@ -21,41 +23,120 @@
     <title>Box NutriFisíco</title>
   </head>
   <body>
-        <!-- HEADER -->
-        <header id="header" class="row">
-          <nav class="navbar navbar-expand-lg bg-body-tertiary">
-            <div class="container-fluid">
-              <a class="navbar-brand" href="#">
-                <img
-                  src="/assets/img/logoBox.jpg"
-                  alt="Logo"
-                  width="50"
-                  height="40"
-                  class="d-inline-block align-text-center"
-                />
-                Box NutriFisíco
-              </a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/index.html">Início</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="/treinos.html">Treinos</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="/parceiros.html">Parceiros</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link disabled">Disabled</a>
-                  </li>
-                </ul>
-            </div>
-          </nav>
-        </header>
-        <!-- HEADER -->
+    <!-- HEADER -->
+    <header id="header" class="row">
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img
+              src="/assets/img/logoBox.jpg"
+              alt="Logo"
+              width="50"
+              height="40"
+              class="d-inline-block align-text-center"
+            />
+            Box NutriFisíco
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/index.html">Início</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/treinos.html">Treinos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/parceiros.html">Parceiros</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled">Disabled</a>
+              </li>
+            </ul>
+        </div>
+      </nav>
+    </header>
+    <!-- HEADER -->
+    <!-- linha treinos mais usados -->
+    <div class="container teste">
+      <div class="row">
+        <div class="col-12 col-md-9">
+          <h1>Treinos mais usados</h1>
+          <div class="btn-group">
+            <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              Action
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Separated link</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div> 
+    <!-- linha treinos mais usados -->
+    <!-- linha Construção de treino -->
+    <div class="container teste">
+      <div class="row">
+        <div class="col-12 col-md-9">
+          <h1>Construção de treino</h1>
+          <div class="btn-group">
+            <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              Quantas seções ?
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">1</a></li>
+              <li><a class="dropdown-item" href="#">2</a></li>
+              <li><a class="dropdown-item" href="#">3</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Separated link</a></li>
+            </ul>
+          </div>
+          <div class="btn-group">
+            <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              Tempo de seção ?
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">10</a></li>
+              <li><a class="dropdown-item" href="#">20</a></li>
+              <li><a class="dropdown-item" href="#">30</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Separated link</a></li>
+            </ul>
+          </div>
+          <div class="btn-group">
+            <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              Quais exercícios ?
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">burpe</a></li>
+              <li><a class="dropdown-item" href="#">salto</a></li>
+              <li><a class="dropdown-item" href="#">swing</a></li>
+              <li><a class="dropdown-item" href="#">poli</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Separated link</a></li>
+            </ul>
+          </div>
+          <div class="btn-group">
+            <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              Tempo de descanço ?
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">10</a></li>
+              <li><a class="dropdown-item" href="#">20</a></li>
+              <li><a class="dropdown-item" href="#">30</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Separated link</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- linha Construção de treino -->
   </body>
 </html>
