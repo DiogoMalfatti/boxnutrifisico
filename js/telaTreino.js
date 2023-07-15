@@ -1,5 +1,5 @@
 function voltar() {
-  window.location.href = "treinos.html";
+  window.location.href = "/boxnutrifisico/treinos.html";
 }
 // Obter dados do armazenamento local
 const dadosTreino = JSON.parse(localStorage.getItem("dadosTreino"));
@@ -121,8 +121,6 @@ function rodarExercicios(arrayExercicios) {
   });
 }
 
-
-
 async function iniciar() {
   // Esconder botão Iniciar e mostrar botão Parar
   document.querySelector(".iniciar").style.display = "none";
@@ -132,27 +130,29 @@ async function iniciar() {
   document.querySelector(".parar").innerHTML = "PARAR";
 
   for (let i = 0; i < dadosTreino.quantidadeSecoes; i++) {
-    document.querySelector('.secoes').innerHTML = `Seções - ${i + 1}/${dadosTreino.quantidadeSecoes}`
+    document.querySelector(".secoes").innerHTML = `Seções - ${i + 1}/${
+      dadosTreino.quantidadeSecoes
+    }`;
     console.log(`Iniciando seção ${i + 1}`);
     audio321.play();
-   
-    resetarClasseElementos()
+
+    resetarClasseElementos();
     await rodarExercicios(novoArrayExercicios);
   }
-  resetarClasseElementos()
-  document.querySelector('.secoes').innerHTML = ''
+  resetarClasseElementos();
+  document.querySelector(".secoes").innerHTML = "";
   // Esconder botão Parar e mostrar botão Iniciar
   document.querySelector(".parar").style.display = "none";
   document.querySelector(".iniciar").style.display = "block";
 }
-function resetarClasseElementos(){
-   // seleciona todos os elementos com a classe 'sua-classe'
-   const elementos = document.querySelectorAll(".exercicio-concluido");
+function resetarClasseElementos() {
+  // seleciona todos os elementos com a classe 'sua-classe'
+  const elementos = document.querySelectorAll(".exercicio-concluido");
 
-   // percorre todos os elementos selecionados e remove a classe 'sua-classe'
-   elementos.forEach(function (elemento) {
-     elemento.classList.remove("exercicio-concluido");
-   });
+  // percorre todos os elementos selecionados e remove a classe 'sua-classe'
+  elementos.forEach(function (elemento) {
+    elemento.classList.remove("exercicio-concluido");
+  });
 }
 function parar() {
   location.reload();
