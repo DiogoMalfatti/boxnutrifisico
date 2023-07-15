@@ -22,7 +22,7 @@ function iniciarExercicio() {
   const dadosTreino = configuracoes;
   console.log(dadosTreino);
   localStorage.setItem("dadosTreino", JSON.stringify(dadosTreino));
-  window.location.href = "/boxnutrifisico/telaTreino.html";
+  window.location.href = "telaTreino.html";
 }
 
 let exercicios = [];
