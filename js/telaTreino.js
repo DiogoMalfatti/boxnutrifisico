@@ -1,6 +1,5 @@
 function voltar() {
-  window.location.href =
-    "https://diogomalfatti.github.io/boxnutrifisico/treinos.html";
+  window.location.href = "/boxnutrifisico/treinos.html";
 }
 // Obter dados do armazenamento local
 const dadosTreino = JSON.parse(localStorage.getItem("dadosTreino"));
