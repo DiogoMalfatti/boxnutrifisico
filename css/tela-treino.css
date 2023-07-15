@@ -1,0 +1,98 @@
+.listaExercicios {
+    padding-left: 3px;
+}
+
+
+.c-body {
+    margin: 10px;
+}
+
+.c-container {
+    height: 90vh;
+}
+
+.contagem-container {
+    background-color: #2d2829;
+    color: orange;
+}
+
+.botoes {
+
+    width: 100%;
+}
+
+.voltar {
+    border-color: unset;
+    font-size: 30px;
+    color: #ffa500;
+    background: #3e3a3b;
+    font-weight: bold;
+    border-radius: unset !important;
+    border-radius: unset !important;
+    width: 100%;
+}
+
+.iniciar {
+    border-color: unset;
+    font-size: 30px;
+    color: #2d2829;
+    background: orange;
+    font-weight: bold;
+    border-radius: unset !important;
+    width: 100%;
+    display: block;
+}
+
+.parar {
+    border-color: unset;
+    font-size: 30px;
+    color: #2d2829;
+    background: #F44336;
+    font-weight: bold;
+    border-radius: unset !important;
+    width: 100%;
+    display: none;
+}
+
+
+.lista-container {
+    border-left: 1px solid white;
+    background-color: #2d2829;
+}
+
+.lista-container h1 {
+    color: #ffa500;
+}
+
+.numeros {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.digitos {
+    font-size: 230px;
+    font-family: fantasy;
+}
+
+.exercicio {
+    width: 100%;
+    background: #3e3a3b;
+    color: white;
+    border-bottom: 1px solid black;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+
+.exercicio-andamento {
+    background: #ffc107;
+    color: black;
+
+}
+
+.exercicio-concluido {
+    color: black;
+    background: #10c218;
+}
