@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<html lang="pt"><!DOCTYPE html>
 <html lang="pt">
 
 <head>
@@ -42,13 +41,13 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/index.html">Início</a>
+              <a class="nav-link active" aria-current="page" href="/boxnutrifisico/index.html">Início</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/treinos.html">Treinos</a>
+              <a class="nav-link" href="/boxnutrifisico/treinos.html">Treinos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/parceiros.html">Parceiros</a>
+              <a class="nav-link" href="/boxnutrifisico/parceiros.html">Parceiros</a>
             </li>
             <li class="nav-item">
               <a class="nav-link disabled">Disabled</a>
@@ -186,144 +185,6 @@
       exercicios = exercicios.filter(item => item.id !== id);
       atualizarListaExercicios();
     }
-  </script>
-</body>
-
-</html>
-
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- BOOTSTRAP 5 -->
-  <!-- icons -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" />
-  <!-- pooper js -->
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
-    crossorigin="anonymous"></script>
-  <!-- css -->
-  <link rel="stylesheet" href="bootstrap5/css/bootstrap.min.css" />
-  <!-- js -->
-  <script src="bootstrap5/js/bootstrap.min.js" defer></script>
-  <!-- BOOTSTRAP 5 -->
-  <script src="/js/treino.js" defer></script>
-  <script src="js/telaTreino.js" defer></script>
-  <link rel="stylesheet" href="css/styles.css" />
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-  <!-- ❌ fazer favivon -->
-  <title>Box NutriFisíco</title>
-</head>
-
-<body>
-  <!-- HEADER -->
-  <header id="header" class="row">
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-          <img src="/assets/img/logoBox.jpg" alt="Logo" width="50" height="40"
-            class="d-inline-block align-text-center" />
-          Box NutriFisíco
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/boxnutrifisico/index.html">Início</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/boxnutrifisico/treinos.html">Treinos</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/boxnutrifisico/parceiros.html">Parceiros</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled">Disabled</a>
-            </li>
-          </ul>
-        </div>
-    </nav>
-  </header>
-  <div class="container-fluid c-container">
-    <div class="container header teste">
-      <div class="row">
-        <div class="col-12 col-md-9">
-          <h1>Construção de treino</h1>
-          <div class="btn-group">
-            <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-              Quantas seções ?
-            </button>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#" onclick="criandoElemento('1','sessao')">1</a></li>
-              <li><a class="dropdown-item" href="#" onclick="criandoElemento('2','sessao')">2</a></li>
-              <li><a class="dropdown-item" href="#" onclick="criandoElemento('3','sessao')">3</a></li>
-            </ul>
-          </div>
-          <div class="btn-group">
-            <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-              Tempo de exercício ?
-            </button>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#" onclick="criandoElemento('10', 'exercicio')">10</a></li>
-              <li><a class="dropdown-item" href="#" onclick="criandoElemento('20', 'exercicio')">20</a></li>
-              <li><a class="dropdown-item" href="#" onclick="criandoElemento('30', 'exercicio')">30</a></li>
-              <li><a class="dropdown-item" href="#" onclick="criandoElemento('40', 'exercicio')">40</a></li>
-              <li><a class="dropdown-item" href="#" onclick="criandoElemento('50', 'exercicio')">50</a></li>
-              <li><a class="dropdown-item" href="#" onclick="criandoElemento('60', 'exercicio')">60</a></li>
-            </ul>
-          </div>
-          <div class="btn-group">
-            <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-              Quais exercícios ?
-            </button>
-  
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#" onclick="adicionarExercicio('burpe')">burpe</a></li>
-              <li><a class="dropdown-item" href="#" onclick="adicionarExercicio('salto')">salto</a></li>
-              <li><a class="dropdown-item" href="#" onclick="adicionarExercicio('swing')">swing</a></li>
-              <li><a class="dropdown-item" href="#" onclick="adicionarExercicio('poli')">poli</a></li>
-            </ul>
-          </div>
-          <div class="btn-group">
-            <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-              Tempo de descanço ?
-            </button>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#" onclick="criandoElemento('10', 'descanso')">10</a></li>
-              <li><a class="dropdown-item" href="#" onclick="criandoElemento('20', 'descanso')">20</a></li>
-              <li><a class="dropdown-item" href="#" onclick="criandoElemento('30', 'descanso')">30</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  <!-- linha Construção de treino -->
-  <!-- preview treinos -->
-  <div class="container testecontainer">
-    <div class="row testerow">
-      <div class="col-12 col-md-8 col-configuracoes">
-        <h1>Configuração</h1>
-        <!-- COMEÇAR -->
-        <div id="sessao" class="texto-configuracao">Número de seções: <span class="sessao"></span></div>
-        <div id="exercicio" class="texto-configuracao">Tempo de cada exercicio: <span class="exercicio"></span></div>
-        <div id="descanso" class="texto-configuracao">Tempo de cada descanso: <span class="descanso"></span></div>
-
-      </div>
-      <div class="col-12 col-md-4 col-configuracoes">
-        <h1>Exercícios</h1>
-        <ul class="listaExercicios">
-        </ul>
-      </div>
-      <button class="btn btn-success btn-lg rodar-treino" onclick="iniciarExercicio()">Rodar treino</button>
-    </div>
-  </div>
-</div>
-  <!-- preview treinos -->
-  <script>
-    
   </script>
 </body>
 
