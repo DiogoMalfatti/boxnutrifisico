@@ -1,80 +1,68 @@
 <!DOCTYPE html>
 <html lang="pt">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- BOOTSTRAP 5 -->
     <!-- icons -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
-    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" />
     <!-- pooper js -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
     <!-- css -->
     <link rel="stylesheet" href="bootstrap5/css/bootstrap.min.css" />
     <!-- js -->
     <script src="bootstrap5/js/bootstrap.min.js" defer></script>
     <!-- BOOTSTRAP 5 -->
-
+    <script src="/js/scriptRodaTreino.js" defer></script>
+ 
     <link rel="stylesheet" href="css/tela-treino.css" />
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <!-- ❌ fazer favivon -->
     <title>Box NutriFisíco</title>
-  </head>
+</head>
 
-  <body>
+<body>
     <div class="c-body">
-      <div class="d-flex flex-column justify-content-center botoes">
-        <div class="col-12">
-          <button
-            class="btn btn-primary btn-lg btn-block voltar"
-            onclick="voltar()"
-          >
-            VOLTAR
-          </button>
-        </div>
-        <div class="col-12">
-          <button class="btn btn-success btn-lg iniciar" onclick="iniciar()">
-            INICIAR
-          </button>
-        </div>
-        <div class="col-12">
-          <button class="btn btn-success btn-lg parar" onclick="parar()">
-            PARAR EXERCÍCIO
-          </button>
-        </div>
-      </div>
-
-      <div class="d-flex c-container">
-        <div class="col-8 contagem-container">
-          <div class="numeros">
-            <span class="digitos">00:00</span>
-          </div>
-        </div>
-        <div class="col d-flex flex-column lista-container">
-          <div class="d-flex flex-column justify-content-center">
-            <div
-              class="col-12 flex-column align-items-center d-flex justify-content-center"
-            >
-              <h1 class="secoes"></h1>
-              <h1 class="">Execícios</h1>
+        <div class="d-flex flex-column justify-content-center botoes">
+            <div class="col-12 ">
+                <button class="btn btn-primary btn-lg btn-block voltar" onclick="voltar()">VOLTAR</button>
             </div>
-          </div>
-          <div
-            class="lista-exercicios d-flex flex-column align-items-center justify-content-center"
-          >
-            <div></div>
-          </div>
+            <div class="col-12 ">
+                <button class="btn btn-success btn-lg  iniciar" onclick="iniciar()">INICIAR</button>
+            </div>
+            <div class="col-12 ">
+                <button class="btn btn-success btn-lg parar" onclick="parar()">PARAR EXERCÍCIO</button>
+            </div>
         </div>
-      </div>
+
+        <div class="d-flex c-container">
+            <div class="col-8 contagem-container">
+                <div class="numeros">
+                    <span class="digitos">00:00</span>
+                </div>
+            </div>
+            <div class="col d-flex flex-column lista-container">
+                <div class="d-flex flex-column justify-content-center">
+                    <div class="col-12  flex-column align-items-center d-flex justify-content-center">
+                        <h1 class="secoes"></h1>
+                        <h1 class="">Execícios</h1>
+                    </div>
+                </div>
+                <div class="lista-exercicios    d-flex flex-column align-items-center justify-content-center">
+                    <div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 
-    <script src="./js/telaTreino.js"></script>
-  </body>
+       <script src="/js/telaTreino.js"></script>
+
+</body>
+
 </html>

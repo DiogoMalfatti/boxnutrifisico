@@ -1,0 +1,56 @@
+-> 19/02/2023
+
+2o passo
+vamos criar os seguintes scripts:
+-roda sessão
+-roda treino
+-roda minutos
+-roda segundos
+-roda descanso
+
+-tem que fazer um for e a iteração de i++ só pode rodar depois do tempo
+-tem que somar o tempo de minutos em segundos + o tempo de descanso
+
+estimativa de prazo 1 mês aprox. 19/03/2023
+
+após isso 3o passo ainda não tao bem definido
+
+-fazer aparecer a lista de exercicios
+-fazer a sessao ser dinamica
+-apresentar um preview aprox. 19/04/2023
+
+depois disso as coisas rodam bem rapido:
+-é reunião
+-apresentação
+-detalhes
+-ajustes
+
+19/02/2023 <-
+
+-> 12/02/2023
+
+-de maneira geral tudo abaixo foi criado de forma simples
+como entendemos o MVP
+Contudo entendemos o precisa ser o proximo 2o passo
+e já temos uma ideia do que será o 3o passo
+
+-iniciar o projeto. -> OK
+.github -> OK
+.github pages -> OK
+
+-criar um pagina com estrutura basica responsiva. -> OK
+01 - cdn ? || arquivos internos ?
+.prefiro arquivos internos, depois de pronto não tem o que mexer caso haja alguma atualização.
+.isso vai depender da velocidade na hora do funcionamento.
+
+02 - responsividade
+.importancias
+TV(importante 01)
+Desktop
+Notebook
+tablet(menos importante 03)
+Mobile(importante 02)
+
+-criar um menu responsivo. -> OK
+
+12/02/2023 <-
