@@ -115,6 +115,10 @@
       border-radius: 50%;
     }
 
+    .blue {
+      background: #0407db;
+    }
+
     .green {
       background: green;
     }
@@ -181,7 +185,9 @@
     }
 
     .selects {
+
       color: white;
+      display: flex;
     }
   </style>
   <div class="container-fluid c-container">
@@ -189,89 +195,58 @@
       <div class="col-12 col-sm-2 col-md-2 col-lx-12 config">
         <div class="logo"><img src="assets/imagens/logo-menu.png"></div>
         <div class="c-container-list">
-          <div class="accordion" id="accordionPanelsStayOpenExample">
-            <div class="accordion-item">
-              <h2 class="accordion-header">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                  data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
-                  aria-controls="panelsStayOpen-collapseOne">
-                  <div class="list">
-                    <div class="bolinhaETitulo">
-                      <div class="bolinha green"></div>
-                      EXERCÍCIO
-                    </div>
-                    <span id="exercise-time">00:00</span>
-                  </div>
-                </button>
-              </h2>
-              <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
-                <div class="accordion-body">
-                  <div class="selects">
-                    <div>Minutos</div>
-                    <select class="form-select minutesSelect" id="exercise-minutes-select" aria-label="Minutos">
-                    </select>
-                  </div>
-                  <div class="selects">
-                    <div>Segundos</div>
-                    <select class="form-select secondsSelect" id="exercise-seconds-select" aria-label="Segundos">
-
-                    </select>
-                  </div>
-
-                </div>
-              </div>
+          <div class="list">
+            <div class="bolinhaETitulo">
+              <div class="bolinha blue"></div>
+              QUANTOS EXERCÍCIOS ?
             </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                  data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
-                  aria-controls="panelsStayOpen-collapseTwo">
-                  <div class="list">
-                    <div class="bolinhaETitulo">
-                      <div class="bolinha red"></div>DESCANÇO
-                    </div> 
-                    <span id="rest-time">00:00</span>
-                  </div>
-                </button>
-              </h2>
-              <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
-                <div class="accordion-body">
-                  <div class="selects">
-                    <div>Minutos</div>
-                    <select class="form-select minutesSelect" id="rest-minutes-select" aria-label="Minutos">
-                    </select>
-                  </div>
-                  <div class="selects">
-                    <div>Segundos</div>
-                    <select class="form-select secondsSelect" id="rest-seconds-select" aria-label="Segundos">
-                    </select>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                  data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
-                  aria-controls="panelsStayOpen-collapseThree">
-                  <div class="list">
-                    <div class="bolinhaETitulo">
-                      <div class="bolinha yellow"></div>SEÇOES
-                    </div>
-                    <span id="sections-quantity">1</span>
-                  </div>
-                </button>
-              </h2>
-              <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
-                <div class="accordion-body">
-                  <select class="form-select" id="quantity-sections" aria-label="Minutos">
-                  </select>
-                </div>
-              </div>
+            <div class="selects">
+
+              <select class="form-select" id="quantity-exercise" aria-label="Minutos">
+              </select>
             </div>
           </div>
+          <div class="list">
+            <div class="bolinhaETitulo">
+              <div class="bolinha green"></div>
+              EXERCÍCIO
+            </div>
+            <div class="selects">
 
-          <!-- <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown"
+              <select style="text-align: end;" class="form-select minutesSelect" id="exercise-minutes-select" aria-label="Minutos">
+              </select>:
+              <select class="form-select secondsSelect" id="exercise-seconds-select" aria-label="Segundos">
+            </div>
+            <div class="selects">
+              </select>
+            </div>
+          </div>
+          <div class="list">
+            <div class="bolinhaETitulo">
+              <div class="bolinha red"></div>DESCANSO
+            </div>
+            <div class="selects">
+
+              <select class="form-select minutesSelect" id="rest-minutes-select" aria-label="Minutos">
+              </select>:
+              <select class="form-select secondsSelect" id="rest-seconds-select" aria-label="Segundos">
+              </select>
+            </div>
+          </div>
+          <div class="list">
+            <div class="bolinhaETitulo">
+              <div class="bolinha yellow"></div>SEÇOES
+            </div>
+            <select style="text-align: end;" class="form-select" id="quantity-sections" aria-label="Minutos">
+            </select>
+          </div>
+        </div>
+        <div class="botao-iniciar" onclick="iniciar()">INICIAR</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown"
                   aria-expanded="false">
                   minutos ?
                 </button>
@@ -284,9 +259,9 @@
                   <li><a class="dropdown-item" href="#" onclick="criandoElemento('60', 'exercicio')">60</a></li>
                 </ul> -->
 
-        </div>
-        <!-- <div>EXERCÍCIO</div> -->
-        <!--   <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+
+  <!-- <div>EXERCÍCIO</div> -->
+  <!--   <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
               minutos ?
             </button>
             <ul class="dropdown-menu">
@@ -298,16 +273,16 @@
               <li><a class="dropdown-item" href="#" onclick="criandoElemento('60', 'exercicio')">60</a></li>
             </ul> -->
 
-        <!--           <div class="list">
+  <!--           <div class="list">
             <div class="bolinha red"></div>DESCANÇO
           </div>
           <div class="list">
             <div class="bolinha yellow"></div>SEÇOES
           </div> -->
 
-        <div class="botao-iniciar">INICIAR</div>
-      </div>
-      <!--   <div class="col-12 col-md-9">
+
+
+  <!--   <div class="col-12 col-md-9">
         <h1>Construção de treino</h1>
         <div class="btn-group">
           <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
@@ -355,8 +330,7 @@
       <li><a class="dropdown-item" href="#" onclick="criandoElemento('30', 'descanso')">30</a></li>
       </ul>
     </div>    -->
-    </div>
-  </div>
+
 
   <!-- linha Construção de treino -->
   <!-- preview treinos -->
@@ -378,7 +352,7 @@
       <button class="btn btn-success btn-lg rodar-treino" onclick="iniciarExercicio()">Rodar treino</button>
     </div>
   </div> -->
-  </div>
+
   <!-- preview treinos -->
   <script>
     const exericios = []
@@ -437,11 +411,25 @@
   </script>
 </body>
 <script>
+  let sectionsQuantityExercise = ''
   let exerciseMinutes = "";
   let exerciseSeconds = "";
   let restMinutes = "";
   let restSeconds = "";
   let sectionsQuantity = "";
+
+  function createQuantityExercisesOptions() {
+    const selectElement = document.getElementById('quantity-exercise');
+
+    for (let i = 1; i <= 60; i++) {
+      const option = document.createElement('option');
+      option.value = i.toString(); // Não adiciona o zero à esquerda nos values das options
+      option.textContent = i.toString(); // Não adiciona o zero à esquerda no texto das options
+      selectElement.appendChild(option);
+    }
+
+    selectElement.value = '1'; // Mantém o valor "1" como padrão
+  }
 
   // Função para criar os options de 0 a 59 minutos
   function createMinuteOptions() {
@@ -502,21 +490,22 @@
     const restMinutesSelect = document.querySelector('#rest-minutes-select');
     const restSecondsSelect = document.querySelector('#rest-seconds-select');
     const sectionsQuantitySelect = document.querySelector('#quantity-sections');
+    const sectionsQuantityExerciseSelect = document.querySelector('#quantity-exercise');
 
     exerciseMinutes = exerciseMinutesSelect.value;
     exerciseSeconds = exerciseSecondsSelect.value;
     restMinutes = restMinutesSelect.value;
     restSeconds = restSecondsSelect.value;
     sectionsQuantity = sectionsQuantitySelect.value;
-
+    sectionsQuantityExercise = sectionsQuantityExerciseSelect.value;
     // Atualizar os valores exibidos nos elementos <span>
-    const exerciseTimeElement = document.querySelector('#exercise-time');
-    const restTimeElement = document.querySelector('#rest-time');
-    const sectionsQuantityElement = document.querySelector('#sections-quantity');
+    /*    const exerciseTimeElement = document.querySelector('#exercise-time');
+       const restTimeElement = document.querySelector('#rest-time');
+       const sectionsQuantityElement = document.querySelector('#sections-quantity'); */
 
-    exerciseTimeElement.textContent = `${exerciseMinutes.padStart(2, '0')}:${exerciseSeconds.padStart(2, '0')}`;
-    restTimeElement.textContent = `${restMinutes.padStart(2, '0')}:${restSeconds.padStart(2, '0')}`;
-    sectionsQuantityElement.textContent = sectionsQuantity;
+    /*   exerciseTimeElement.textContent = `${exerciseMinutes.padStart(2, '0')}:${exerciseSeconds.padStart(2, '0')}`;
+      restTimeElement.textContent = `${restMinutes.padStart(2, '0')}:${restSeconds.padStart(2, '0')}`;
+      sectionsQuantityElement.textContent = sectionsQuantity; */
   }
   function addChangeEvents() {
     const exerciseMinutesSelect = document.querySelector('#exercise-minutes-select');
@@ -524,22 +513,66 @@
     const restMinutesSelect = document.querySelector('#rest-minutes-select');
     const restSecondsSelect = document.querySelector('#rest-seconds-select');
     const sectionsQuantitySelect = document.querySelector('#quantity-sections');
+    const sectionsQuantityExerciseSelect = document.querySelector('#quantity-exercise');
+
 
     exerciseMinutesSelect.addEventListener('change', captureSelectedValues);
     exerciseSecondsSelect.addEventListener('change', captureSelectedValues);
     restMinutesSelect.addEventListener('change', captureSelectedValues);
     restSecondsSelect.addEventListener('change', captureSelectedValues);
-    sectionsQuantitySelect.addEventListener('change', captureSelectedValues); // Adicione esta linha
+    sectionsQuantitySelect.addEventListener('change', captureSelectedValues);
+    sectionsQuantityExerciseSelect.addEventListener('change', captureSelectedValues);
+
   }
   // Função principal que chama as funções específicas para cada elemento e captura os valores selecionados
   function createOptions() {
+    createQuantityExercisesOptions()
     createMinuteOptions();
     createSecondOptions();
     createSectionOptions();
     captureSelectedValues();
     addChangeEvents();
   }
+  function iniciar() {
 
+    sectionsQuantityExercise = parseInt(sectionsQuantityExercise)
+    exerciseMinutes = parseInt(exerciseMinutes)
+    exerciseSeconds = parseInt(exerciseSeconds)
+    restMinutes = parseInt(restMinutes)
+    restSeconds = parseInt(restSeconds)
+    sectionsQuantity = parseInt(sectionsQuantity)
+
+    const totalTempoExercicio = (exerciseMinutes * 60) + exerciseSeconds
+    const totalTempoDescanso = (restMinutes * 60) + restSeconds
+    const configuracoes = {
+      quantidadeSecoes: sectionsQuantity,
+      tempoExercicio: totalTempoExercicio,
+      tempoDescanso: totalTempoDescanso
+    }
+    let exercicios = []
+    for (let i = 1; i <= sectionsQuantityExercise; i++) {
+      exercicios.push(adicionarExercicio(i));
+    }
+
+    configuracoes.exercicios = exercicios
+    const dadosTreino = configuracoes
+    console.log(dadosTreino);
+    localStorage.setItem('dadosTreino', JSON.stringify(dadosTreino));
+    console.log('sectionsQuantityExercise', sectionsQuantityExercise)
+    console.log('exerciseMinutes', exerciseMinutes)
+    console.log('exerciseSeconds', exerciseSeconds)
+    console.log('restMinutes', restMinutes)
+    console.log('restSeconds', restSeconds)
+    console.log('sectionsQuantity', sectionsQuantity)
+    console.log('totalTempoExercicio', totalTempoExercicio)
+  }
+  function adicionarExercicio(index) {
+    const novoItem = {
+      exercicio: `Exercicio - ${index}`,
+      id: index
+    };
+    return novoItem
+  }
   // Chama a função principal para criar os options das listas e capturar os valores assim que a página carregar
   window.onload = function () {
     createOptions();
