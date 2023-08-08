@@ -12,8 +12,10 @@
   }
 
   .painel-tempo {
+  /*   width: 600px;
+    margin: 75px 60px; */
     width: 600px;
-    margin: 75px 60px;
+    padding: 75px 20px;
   }
 
   .principal {
