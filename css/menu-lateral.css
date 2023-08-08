@@ -1,0 +1,135 @@
+.c-row-config {
+    height: 88vh;
+  }
+
+  .logo {
+    display: flex;
+    justify-content: center;
+    margin: 25px 0px;
+  }
+
+  .logo img {
+    width: 100px;
+    height: 100px;
+
+  }
+
+  .config {
+    background: #323232;
+    color: white;
+    padding-left: 0px;
+    padding-right: 0px;
+    min-width: 300px;
+  }
+
+  .c-container-list {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-bottom: 80px;
+    padding: 0px 5px;
+  }
+
+  .list {
+    position: relative;
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    padding: 0px 15px;
+    justify-content: space-between;
+  }
+
+  .bolinhaETitulo {
+    display: flex;
+    gap: 10px;
+  }
+
+  .list::before {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    width: 100%;
+    height: 3px;
+    background-color: #1E1E1E;
+  }
+
+  .bolinha {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+  }
+
+  .blue {
+    background: #0407db;
+  }
+
+  .green {
+    background: green;
+  }
+
+  .red {
+    background: red;
+  }
+
+  .yellow {
+    background: yellow;
+  }
+
+  .botao-iniciar {
+    display: flex;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 32px;
+    background-color: #58CD2F;
+  }
+
+  .accordion-button {
+    color: white;
+    background-color: #323232;
+    padding: 14px 0px;
+  }
+
+  .accordion-button:not(.collapsed) {
+    color: white;
+    background: #323232;
+  }
+
+  .accordion-button:not(.collapsed)::after {}
+
+  .accordion-item {
+    border: unset;
+  }
+
+  .accordion-body {
+    display: flex;
+    background: #323232;
+    padding: 5px 5px;
+    justify-content: space-evenly;
+  }
+
+  .form-select {
+    color: white;
+    background: #323232;
+    border: unset;
+    border-radius: 0px;
+    text-align: center;
+    padding: unset;
+  }
+
+  .accordion-button:focus {
+    box-shadow: unset;
+  }
+
+  .form-select:focus {
+    box-shadow: unset;
+  }
+
+  .accordion {
+    --bs-accordion-border-color: unset
+  }
+
+  .selects {
+
+    color: white;
+    display: flex;
+  }

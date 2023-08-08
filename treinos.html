@@ -19,8 +19,8 @@
   <!-- BOOTSTRAP 5 -->
   <script src="/js/scriptRodaTreino.js" defer></script>
   <link rel="stylesheet" href="css/styles.css" />
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-  <!-- ❌ fazer favivon -->
+  <link rel="stylesheet" href="css/menu-lateral.css" />
+  <link rel="icon" href="assets/imagens/favicon/favicon.png" type="image/x-icon" />
   <title>Box NutriFisíco</title>
 </head>
 
@@ -30,7 +30,7 @@
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">
-          <img src="/assets/img/logoBox.jpg" alt="Logo" width="50" height="40"
+          <img src="assets/imagens/logo-bar-menu.png" alt="Logo" width="50" height="40"
             class="d-inline-block align-text-center" />
           Box NutriFisíco
         </a>
@@ -54,146 +54,87 @@
     </nav>
   </header>
   <style>
-    .c-row-config {
-      height: 88vh;
-    }
-
-    .logo {
-      display: flex;
-      justify-content: center;
-      margin: 25px 0px;
-    }
-
-    .logo img {
-      width: 100px;
-      height: 100px;
-
-    }
-
-    .config {
-      background: #323232;
+    .treinamento {
       color: white;
-      padding-left: 0px;
-      padding-right: 0px;
-      min-width: 300px;
     }
 
-    .c-container-list {
+    .painel-tempo {
+      width: 600px;
+      /* height: 600px; */
+      margin: 75px 60px;
+    }
+
+    .principal {
+      height: 300px;
+      padding: 40px 0px;
       display: flex;
+      color: black;
+      background: #58CD2F;
       flex-direction: column;
-      gap: 25px;
-      margin-bottom: 80px;
-      padding: 0px 5px;
+      align-items: center;
     }
 
-    .list {
-      position: relative;
-      display: flex;
-      gap: 10px;
-      width: 100%;
-      padding: 0px 15px;
-      justify-content: space-between;
-    }
-
-    .bolinhaETitulo {
-      display: flex;
-      gap: 10px;
-    }
-
-    .list::before {
-      content: '';
-      position: absolute;
-      bottom: -12px;
-      width: 100%;
-      height: 3px;
-      background-color: #1E1E1E;
-    }
-
-    .bolinha {
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-    }
-
-    .blue {
-      background: #0407db;
-    }
-
-    .green {
-      background: green;
-    }
-
-    .red {
-      background: red;
-    }
-
-    .yellow {
-      background: yellow;
-    }
-
-    .botao-iniciar {
-      display: flex;
-      justify-content: center;
+    .nome-principal {
       font-weight: 700;
-      font-size: 32px;
-      background-color: #58CD2F;
+      font-size: 45px;
+      font-family: 'Inter', sans-serif;
     }
 
-    .accordion-button {
-      color: white;
-      background-color: #323232;
-      padding: 14px 0px;
+    .tempo-principal {
+      line-height: 136px;
+      font-size: 150px;
     }
 
-    .accordion-button:not(.collapsed) {
-      color: white;
-      background: #323232;
-    }
-
-    .accordion-button:not(.collapsed)::after {}
-
-    .accordion-item {
-      border: unset;
-    }
-
-    .accordion-body {
+    .secundario {
+      height: 200px;
+      padding: 40px 0px;
       display: flex;
-      background: #323232;
-      padding: 5px 5px;
-      justify-content: space-evenly;
-    }
-
-    .form-select {
       color: white;
-      background: #323232;
-      border: unset;
-      border-radius: 0px;
-      text-align: center;
-      padding: unset;
+      flex-direction: column;
+      align-items: center;
+      background: #F93232;
     }
 
-    .accordion-button:focus {
-      box-shadow: unset;
+    .nome-secundario {
+      font-weight: 700;
+      font-size: 30px;
+      font-family: 'Inter', sans-serif;
     }
 
-    .form-select:focus {
-      box-shadow: unset;
+    .tempo-secundario {
+      line-height: 95px;
+      font-size: 90px;
     }
 
-    .accordion {
-      --bs-accordion-border-color: unset
+    .valor-tempo {
+      font-weight: 600;
+      font-family: 'Fjalla One', sans-serif;
     }
 
-    .selects {
-
-      color: white;
+    .secoes {
       display: flex;
+      justify-content: space-between;
+      color: #FFB800;
+      font-weight: 700;
+      font-size: 40px;
+      line-height: 48.41px;
+      font-family: 'Inter', sans-serif;
+      margin: 5px 0px;
+    }
+
+    @font-face {
+      font-family: 'Fjalla One';
+      src: url('assets/fonts/Fjalla_One/FjallaOne-Regular.ttf') format('ttf');
+      /* Adicione outros formatos de fonte aqui, se necessário */
+
+      font-family: 'Inter';
+      src: url('assets/fonts/Inter_Bold/Inter-Bold.ttf') format('ttf');
     }
   </style>
   <div class="container-fluid c-container">
     <div class="row c-row-config">
       <div class="col-12 col-sm-2 col-md-2 col-lx-12 config">
-        <div class="logo"><img src="assets/imagens/logo-menu.png"></div>
+        <div class="logo"><img src="assets/imagens/logo-redondo-menu-tempo.png"></div>
         <div class="c-container-list">
           <div class="list">
             <div class="bolinhaETitulo">
@@ -213,7 +154,8 @@
             </div>
             <div class="selects">
 
-              <select style="text-align: end;" class="form-select minutesSelect" id="exercise-minutes-select" aria-label="Minutos">
+              <select style="text-align: end;" class="form-select minutesSelect" id="exercise-minutes-select"
+                aria-label="Minutos">
               </select>:
               <select class="form-select secondsSelect" id="exercise-seconds-select" aria-label="Segundos">
             </div>
@@ -235,13 +177,29 @@
           </div>
           <div class="list">
             <div class="bolinhaETitulo">
-              <div class="bolinha yellow"></div>SEÇOES
+              <div class="bolinha yellow"></div>SEÇÕES
             </div>
             <select style="text-align: end;" class="form-select" id="quantity-sections" aria-label="Minutos">
             </select>
           </div>
         </div>
         <div class="botao-iniciar" onclick="iniciar()">INICIAR</div>
+      </div>
+      <div class="col-12 col-sm-6 col-md-6 col-lx-12 treinamento">
+        <div class="painel-tempo">
+          <div class="principal">
+            <div class="nome-principal">EXERCÍCIO</div>
+            <div class="tempo-principal valor-tempo">00:20</div>
+          </div>
+          <div class="secundario">
+            <div class="nome-secundario">DESCANSAR</div>
+            <div class="tempo-secundario valor-tempo">00:20</div>
+          </div>
+          <div class="secoes">
+            <div class="secoes-titulo">SEÇÃO</div>
+            <div class="secoes-valor">01/03</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
