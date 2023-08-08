@@ -79,10 +79,17 @@
     display: flex;
     justify-content: center;
     font-weight: 700;
+    cursor: pointer;
     font-size: 32px;
     background-color: #58CD2F;
   }
+  .iniciar {
+    background-color: #58CD2F;
+}
 
+.parar {
+    background-color: #F93232;
+}
   .accordion-button {
     color: white;
     background-color: #323232;

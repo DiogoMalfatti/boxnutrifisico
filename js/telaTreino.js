@@ -29,7 +29,7 @@ function criandoLista() {
 }
 
 const novoArrayExercicios = criandoLista();
-
+console.log('novoArrayExercicios', novoArrayExercicios)
 function adicionarNomes(exercicios) {
   const listaExercicios = document.querySelector(".lista-exercicios");
   for (let i = 0; i < exercicios.length; i++) {
@@ -48,7 +48,7 @@ audio321 = new Audio("./audios/audio321.mp3");
 audioDescansar = new Audio("./audios/audioDescansar.mp3");
 audioExercicio = new Audio("./audios/audioExercicio.mp3");
 
-function atualizarCronometro(segundos) {
+/* function atualizarCronometro(segundos) {
   console.log("segundos atualizarCronometro", segundos);
   let minutos = Math.floor(segundos / 60); // calcula os minutos restantes
 
@@ -56,7 +56,29 @@ function atualizarCronometro(segundos) {
 
   let tempoStr = `00:${segundosStr}`; // cria a string de tempo no formato "mm:ss"
   document.querySelector(".digitos").textContent = tempoStr; // atualiza o cronômetro na página
-}
+} */
+
+/*  function atualizarCronometro(segundos) {
+  let minutos = Math.floor(segundos / 60); // calcula os minutos restantes
+
+  let segundosStr = String(segundos % 60).padStart(2, "0"); // formata os segundos como string com dois dígitos
+  let minutosStr = String(minutos) 
+
+  let tempoStr = `${minutosStr}:${segundosStr}`; // cria a string de tempo no formato "mm:ss" ou "m:ss" conforme necessário
+  document.querySelector(".digitos").textContent = tempoStr; // atualiza o cronômetro na página
+} */ 
+
+ function atualizarCronometro(segundos) {
+  let minutos = Math.floor(segundos / 60); // calcula os minutos restantes
+  let segundosStr = String(segundos % 60).padStart(2, "0"); // formata os segundos como string com dois dígitos
+  let minutosStr = String(minutos).padStart(2, "0"); 
+
+  let tempoStr = `${minutosStr}:${segundosStr}`; // cria a string de tempo no formato "mm:ss"
+
+  document.querySelector(".digitos").textContent = tempoStr; // atualiza o cronômetro na página
+}  
+
+
 
 function rodarExercicios(arrayExercicios) {
   return new Promise((resolve, reject) => {
@@ -66,7 +88,7 @@ function rodarExercicios(arrayExercicios) {
       const exercicioAtual = arrayExercicios[indiceExercicio];
       const nomeExercicio = exercicioAtual.nome;
       const tempoExercicio = exercicioAtual.tempo;
-      let segundosRestantes = tempoExercicio;
+      let segundosRestantes = tempoExercicio ;
 
       console.log(`Iniciando ${nomeExercicio} por ${tempoExercicio} segundos`);
 
