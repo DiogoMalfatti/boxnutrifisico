@@ -54,13 +54,20 @@
     </nav>
   </header>
   <style>
+     @font-face {
+      font-family: 'Fjalla One';
+      src: url('assets/fonts/Fjalla_One/FjallaOne-Regular.ttf') format('ttf');
+      /* Adicione outros formatos de fonte aqui, se necessário */
+
+      font-family: 'Inter';
+      src: url('assets/fonts/Inter_Bold/Inter-Bold.ttf') format('ttf');
+    }
     .treinamento {
       color: white;
     }
 
     .painel-tempo {
       width: 600px;
-      /* height: 600px; */
       margin: 75px 60px;
     }
 
@@ -122,14 +129,7 @@
       margin: 5px 0px;
     }
 
-    @font-face {
-      font-family: 'Fjalla One';
-      src: url('assets/fonts/Fjalla_One/FjallaOne-Regular.ttf') format('ttf');
-      /* Adicione outros formatos de fonte aqui, se necessário */
-
-      font-family: 'Inter';
-      src: url('assets/fonts/Inter_Bold/Inter-Bold.ttf') format('ttf');
-    }
+   
   </style>
   <div class="container-fluid c-container">
     <div class="row c-row-config">
@@ -142,7 +142,6 @@
               QUANTOS EXERCÍCIOS ?
             </div>
             <div class="selects">
-
               <select class="form-select" id="quantity-exercise" aria-label="Minutos">
               </select>
             </div>
@@ -168,7 +167,6 @@
               <div class="bolinha red"></div>DESCANSO
             </div>
             <div class="selects">
-
               <select class="form-select minutesSelect" id="rest-minutes-select" aria-label="Minutos">
               </select>:
               <select class="form-select secondsSelect" id="rest-seconds-select" aria-label="Segundos">
@@ -204,112 +202,8 @@
     </div>
   </div>
 
-  <!-- <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown"
-                  aria-expanded="false">
-                  minutos ?
-                </button>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#" onclick="criandoElemento('10', 'exercicio')">10</a></li>
-                  <li><a class="dropdown-item" href="#" onclick="criandoElemento('20', 'exercicio')">20</a></li>
-                  <li><a class="dropdown-item" href="#" onclick="criandoElemento('30', 'exercicio')">30</a></li>
-                  <li><a class="dropdown-item" href="#" onclick="criandoElemento('40', 'exercicio')">40</a></li>
-                  <li><a class="dropdown-item" href="#" onclick="criandoElemento('50', 'exercicio')">50</a></li>
-                  <li><a class="dropdown-item" href="#" onclick="criandoElemento('60', 'exercicio')">60</a></li>
-                </ul> -->
-
-
-  <!-- <div>EXERCÍCIO</div> -->
-  <!--   <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-              minutos ?
-            </button>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#" onclick="criandoElemento('10', 'exercicio')">10</a></li>
-              <li><a class="dropdown-item" href="#" onclick="criandoElemento('20', 'exercicio')">20</a></li>
-              <li><a class="dropdown-item" href="#" onclick="criandoElemento('30', 'exercicio')">30</a></li>
-              <li><a class="dropdown-item" href="#" onclick="criandoElemento('40', 'exercicio')">40</a></li>
-              <li><a class="dropdown-item" href="#" onclick="criandoElemento('50', 'exercicio')">50</a></li>
-              <li><a class="dropdown-item" href="#" onclick="criandoElemento('60', 'exercicio')">60</a></li>
-            </ul> -->
-
-  <!--           <div class="list">
-            <div class="bolinha red"></div>DESCANÇO
-          </div>
-          <div class="list">
-            <div class="bolinha yellow"></div>SEÇOES
-          </div> -->
-
-
-
-  <!--   <div class="col-12 col-md-9">
-        <h1>Construção de treino</h1>
-        <div class="btn-group">
-          <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-            Quantas seções ?
-          </button>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#" onclick="criandoElemento('1','sessao')">1</a></li>
-            <li><a class="dropdown-item" href="#" onclick="criandoElemento('2','sessao')">2</a></li>
-            <li><a class="dropdown-item" href="#" onclick="criandoElemento('3','sessao')">3</a></li>
-          </ul>
-        </div>
-        <div class="btn-group">
-          <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-            Tempo de exercício ?
-          </button>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#" onclick="criandoElemento('10', 'exercicio')">10</a></li>
-            <li><a class="dropdown-item" href="#" onclick="criandoElemento('20', 'exercicio')">20</a></li>
-            <li><a class="dropdown-item" href="#" onclick="criandoElemento('30', 'exercicio')">30</a></li>
-            <li><a class="dropdown-item" href="#" onclick="criandoElemento('40', 'exercicio')">40</a></li>
-            <li><a class="dropdown-item" href="#" onclick="criandoElemento('50', 'exercicio')">50</a></li>
-            <li><a class="dropdown-item" href="#" onclick="criandoElemento('60', 'exercicio')">60</a></li>
-          </ul>
-        </div>
-        <div class="btn-group">
-          <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-            Quais exercícios ?
-          </button>
-
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#" onclick="adicionarExercicio('burpe')">burpe</a></li>
-            <li><a class="dropdown-item" href="#" onclick="adicionarExercicio('salto')">salto</a></li>
-            <li><a class="dropdown-item" href="#" onclick="adicionarExercicio('swing')">swing</a></li>
-            <li><a class="dropdown-item" href="#" onclick="adicionarExercicio('poli')">poli</a></li>
-          </ul>
-        </div>
-        <div class="btn-group">
-          <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-            Tempo de descanço ?
-          </button>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#" onclick="criandoElemento('10', 'descanso')">10</a></li>
-  
-      <li><a class="dropdown-item" href="#" onclick="criandoElemento('20', 'descanso')">20</a></li>
-      <li><a class="dropdown-item" href="#" onclick="criandoElemento('30', 'descanso')">30</a></li>
-      </ul>
-    </div>    -->
-
-
-  <!-- linha Construção de treino -->
-  <!-- preview treinos -->
-  <!--  <div class="container testecontainer">
-    <div class="row testerow">
-      <div class="col-12 col-md-8 col-configuracoes">
-        <h1>Configuração</h1>
-    
-        <div id="sessao" class="texto-configuracao">Número de seções: <span class="sessao"></span></div>
-        <div id="exercicio" class="texto-configuracao">Tempo de cada exercicio: <span class="exercicio"></span></div>
-        <div id="descanso" class="texto-configuracao">Tempo de cada descanso: <span class="descanso"></span></div>
-
-      </div>
-      <div class="col-12 col-md-4 col-configuracoes">
-        <h1>Exercícios</h1>
-        <ul class="listaExercicios">
-        </ul>
-      </div>
-      <button class="btn btn-success btn-lg rodar-treino" onclick="iniciarExercicio()">Rodar treino</button>
-    </div>
-  </div> -->
+<!--       <button class="btn btn-success btn-lg rodar-treino" onclick="iniciarExercicio()">Rodar treino</button>
+ -->
 
   <!-- preview treinos -->
   <script>
@@ -525,11 +419,11 @@
     console.log('totalTempoExercicio', totalTempoExercicio)
   }
   function adicionarExercicio(index) {
-    const novoItem = {
+    const novoExercicio = {
       exercicio: `Exercicio - ${index}`,
       id: index
     };
-    return novoItem
+    return novoExercicio
   }
   // Chama a função principal para criar os options das listas e capturar os valores assim que a página carregar
   window.onload = function () {
