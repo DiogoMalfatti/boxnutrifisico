@@ -17,9 +17,9 @@
   <!-- js -->
   <script src="bootstrap5/js/bootstrap.min.js" defer></script>
   <!-- BOOTSTRAP 5 -->
-  <script src="/js/scriptRodaTreino.js" defer></script>
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="stylesheet" href="css/menu-lateral.css" />
+  <link rel="stylesheet" href="css/treino.css" />
   <link rel="icon" href="assets/imagens/favicon/favicon.png" type="image/x-icon" />
   <title>Box NutriFisíco</title>
 </head>
@@ -53,85 +53,9 @@
         </div>
     </nav>
   </header>
-  <style>
-    @font-face {
-      font-family: 'Fjalla One';
-      src: url('assets/fonts/Fjalla_One/FjallaOne-Regular.ttf') format('ttf');
-      /* Adicione outros formatos de fonte aqui, se necessário */
-
-      font-family: 'Inter';
-      src: url('assets/fonts/Inter_Bold/Inter-Bold.ttf') format('ttf');
-    }
-
-    .treinamento {
-      color: white;
-    }
-
-    .painel-tempo {
-      width: 600px;
-      margin: 75px 60px;
-    }
-
-    .principal {
-      height: 300px;
-      padding: 40px 0px;
-      display: flex;
-      color: black;
-      background: #58CD2F;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .nome-principal {
-      font-weight: 700;
-      font-size: 45px;
-      font-family: 'Inter', sans-serif;
-    }
-
-    .tempo-principal {
-      line-height: 136px;
-      font-size: 150px;
-    }
-
-    .secundario {
-      height: 200px;
-      padding: 40px 0px;
-      display: flex;
-      color: white;
-      flex-direction: column;
-      align-items: center;
-      background: #F93232;
-    }
-
-    .nome-secundario {
-      font-weight: 700;
-      font-size: 30px;
-      font-family: 'Inter', sans-serif;
-    }
-
-    .tempo-secundario {
-      line-height: 95px;
-      font-size: 90px;
-    }
-
-    .valor-tempo {
-      font-weight: 600;
-      font-family: 'Fjalla One', sans-serif;
-    }
-
-    .secoes {
-      display: flex;
-      justify-content: space-between;
-      color: #FFB800;
-      font-weight: 700;
-      font-size: 40px;
-      line-height: 48.41px;
-      font-family: 'Inter', sans-serif;
-      margin: 5px 0px;
-    }
-  </style>
   <div class="container-fluid c-container">
     <div class="row c-row-config">
+      <!-- Menu lateral -->
       <div class="col-12 col-sm-2 col-md-2 col-lx-12 config">
         <div class="logo"><img src="assets/imagens/logo-redondo-menu-tempo.png"></div>
         <div class="c-container-list">
@@ -182,6 +106,7 @@
         </div>
         <div class="botao-iniciar" id="botao" onclick="toggleAcao()">INICIAR</div>
       </div>
+      <!-- Cronômetro -->
       <div class="col-12 col-sm-6 col-md-6 col-lx-12 treinamento">
         <div class="painel-tempo">
           <div class="principal">
@@ -198,374 +123,37 @@
           </div>
         </div>
       </div>
+      <!-- Carrousel -->
+      <div class="col-12 col-sm-6 col-md-6 col-lx-12 treinamento">
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="assets/imagens/carrousel/logoBox.jpg" class="d-block w-100">
+            </div>
+            <div class="carousel-item">
+              <img src="assets/imagens/carrousel/corridaBox.jpg" class="d-block w-100" >
+            </div>
+            <div class="carousel-item">
+              <img src="assets/imagens/carrousel/imagem01Box.jpg" class="d-block w-100">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+        </div>
     </div>
   </div>
 </body>
-<script>
-  /* ----------------------------------------------------
-  -------------------------------------------------------
-  -------------------------------------------------------
-  -------------------------------------------------------
-  -------------------------------------------------------
-   */
-  /* Globais */
-  audio321 = new Audio("./audios/audio321.mp3");
-  audioDescansar = new Audio("./audios/audioDescansar.mp3");
-  audioExercicio = new Audio("./audios/audioExercicio.mp3");
 
-  let setDadosTreino = null
 
-  let exercicioQuantidade = ''
-  let exercicioMinutos = "";
-  let exercicioSegundos = "";
-  let descansoMinutos = "";
-  let descansoSegundos = "";
-  let secoesQuantidade = "";
-
-  let nomePrincipal = document.querySelector('.nome-principal')
-  let tempoPrincipal = document.querySelector('.tempo-principal')
-  let divPrincipal = document.querySelector('.principal')
-
-  let nomeSecundario = document.querySelector('.nome-secundario')
-  let tempoSecundario = document.querySelector('.tempo-secundario')
-  let divSecundaria = document.querySelector('.secundario')
-
-  let botao = document.getElementById('botao');
-
-
-  function selectQuantidadeDeExercicios() {
-    const selectElement = document.getElementById('quantity-exercise');
-
-    for (let i = 1; i <= 60; i++) {
-      const option = document.createElement('option');
-      option.value = i.toString(); // Não adiciona o zero à esquerda nos values das options
-      option.textContent = i.toString(); // Não adiciona o zero à esquerda no texto das options
-      selectElement.appendChild(option);
-    }
-
-    selectElement.value = '1'; // Mantém o valor "1" como padrão
-  }
-
-  // Função para criar os options de 0 a 59 minutos
-  function selectsDeMinutos() {
-    const selectElements = document.querySelectorAll('.minutesSelect');
-
-    for (let selectElement of selectElements) {
-      const zeroOption = document.createElement('option');
-      zeroOption.value = '0';
-      zeroOption.textContent = '00';
-      selectElement.appendChild(zeroOption);
-
-      for (let i = 1; i <= 59; i++) {
-        const option = document.createElement('option');
-        option.value = i.toString();
-        option.textContent = i.toString().padStart(2, '0');
-        selectElement.appendChild(option);
-      }
-    }
-  }
-
-  // Função para criar os options de 0 a 60 segundos
-  function selectDeSegundos() {
-    const selectElements = document.querySelectorAll('.secondsSelect');
-
-    for (let selectElement of selectElements) {
-      const zeroOption = document.createElement('option');
-      zeroOption.value = '0';
-      zeroOption.textContent = '00';
-      selectElement.appendChild(zeroOption);
-
-      for (let i = 1; i <= 60; i++) {
-        const option = document.createElement('option');
-        option.value = i.toString();
-        option.textContent = i.toString().padStart(2, '0');
-        selectElement.appendChild(option);
-      }
-    }
-  }
-
-  // Função para criar os options de 1 a 60 para as seções
-  function selectDeSecoes() {
-    const selectElement = document.getElementById('quantity-sections');
-
-    for (let i = 1; i <= 60; i++) {
-      const option = document.createElement('option');
-      option.value = i.toString(); // Não adiciona o zero à esquerda nos values das options
-      option.textContent = i.toString(); // Não adiciona o zero à esquerda no texto das options
-      selectElement.appendChild(option);
-    }
-
-    selectElement.value = '1'; // Mantém o valor "1" como padrão
-  }
-
-  // Função para capturar os valores selecionados nos acordeões de exercícios e descanso
-  function captureSelectedValues() {
-    const exerciseMinutesSelect = document.querySelector('#exercise-minutes-select');
-    const exerciseSecondsSelect = document.querySelector('#exercise-seconds-select');
-    const restMinutesSelect = document.querySelector('#rest-minutes-select');
-    const restSecondsSelect = document.querySelector('#rest-seconds-select');
-    const sectionsQuantitySelect = document.querySelector('#quantity-sections');
-    const sectionsQuantityExerciseSelect = document.querySelector('#quantity-exercise');
-
-    exerciseMinutesSelect.addEventListener('change', captureSelectedValues);
-    exerciseSecondsSelect.addEventListener('change', captureSelectedValues);
-    restMinutesSelect.addEventListener('change', captureSelectedValues);
-    restSecondsSelect.addEventListener('change', captureSelectedValues);
-    sectionsQuantitySelect.addEventListener('change', captureSelectedValues);
-    sectionsQuantityExerciseSelect.addEventListener('change', captureSelectedValues);
-
-    exercicioMinutos = exerciseMinutesSelect.value;
-    exercicioSegundos = exerciseSecondsSelect.value;
-    descansoMinutos = restMinutesSelect.value;
-    descansoSegundos = restSecondsSelect.value;
-    secoesQuantidade = sectionsQuantitySelect.value;
-    exercicioQuantidade = sectionsQuantityExerciseSelect.value;
-  }
-/*   function addChangeEvents() {
-    const exerciseMinutesSelect = document.querySelector('#exercise-minutes-select');
-    const exerciseSecondsSelect = document.querySelector('#exercise-seconds-select');
-    const restMinutesSelect = document.querySelector('#rest-minutes-select');
-    const restSecondsSelect = document.querySelector('#rest-seconds-select');
-    const sectionsQuantitySelect = document.querySelector('#quantity-sections');
-    const sectionsQuantityExerciseSelect = document.querySelector('#quantity-exercise');
-  } */
-  // Função principal que chama as funções específicas para cada elemento e captura os valores selecionados
-  function createOptions() {
-    selectQuantidadeDeExercicios()
-    selectsDeMinutos();
-    selectDeSegundos();
-    selectDeSecoes();
-    captureSelectedValues();
-  /*   addChangeEvents(); */
-  }
-
-
-
-
-  function construindoConfiguracaoDoTreino() {
-    exercicioQuantidade = parseInt(exercicioQuantidade);
-    exercicioMinutos = parseInt(exercicioMinutos);
-    exercicioSegundos = parseInt(exercicioSegundos);
-    descansoMinutos = parseInt(descansoMinutos);
-    descansoSegundos = parseInt(descansoSegundos);
-    secoesQuantidade = parseInt(secoesQuantidade);
-
-    const totalTempoExercicio = exercicioMinutos * 60 + exercicioSegundos;
-    const totalTempoDescanso = descansoMinutos * 60 + descansoSegundos;
-    const configuracoes = {
-      quantidadeSecoes: secoesQuantidade,
-      tempoExercicio: totalTempoExercicio,
-      tempoDescanso: totalTempoDescanso,
-    };
-
-    let exercicios = [];
-    for (let i = 1; i <= exercicioQuantidade; i++) {
-      exercicios.push(adicionarExercicio(i, configuracoes));
-      if (i < exercicioQuantidade) {
-        exercicios.push(adicionarDescanso(i, configuracoes));
-      }
-    }
-
-    configuracoes.exercicios = exercicios;
-    setDadosTreino = configuracoes;
-    localStorage.setItem("dadosTreino", JSON.stringify(setDadosTreino));
-  }
-
-  function adicionarExercicio(index, configuracoes) {
-    const novoExercicio = {
-      id: index,
-      nome: `Exercicio - ${index}`,
-      tempo: configuracoes.tempoExercicio
-
-    };
-    return novoExercicio;
-  }
-
-  function adicionarDescanso(index, configuracoes) {
-    const descanso = {
-      nome: "descanso",
-      tempo: configuracoes.tempoDescanso,
-    };
-    return descanso;
-  }
-
-  function toggleAcao() {
-
-    if (botao.textContent === 'INICIAR') {
-      iniciar();
-      botao.textContent = 'PARAR';
-      botao.classList.remove('iniciar');
-      botao.classList.add('parar');
-      botao.onclick = parar;
-    } else {
-      parar();
-      botao.textContent = 'INICIAR';
-      botao.classList.remove('parar');
-      botao.classList.add('iniciar');
-      botao.onclick = iniciar;
-    }
-  }
-  async function iniciar() {
-    await construindoConfiguracaoDoTreino()
-    const dadosTreino = JSON.parse(localStorage.getItem("dadosTreino"));
-
-    for (let i = 0; i < dadosTreino.quantidadeSecoes; i++) {
-      const secoesElement = document.querySelector('.secoes');
-      const secoesValorElement = secoesElement.querySelector('.secoes-valor');
-      secoesElement.querySelector('.secoes-titulo').textContent = dadosTreino.quantidadeSecoes === 1 ? 'SEÇÃO' : 'SEÇÕES';
-      secoesValorElement.textContent = `${formatarNumero(i + 1)}/${formatarNumero(dadosTreino.quantidadeSecoes)}`;
-
-      audio321.play();
-
-      await rodarExercicios(dadosTreino.exercicios);
-    }
-    resetaValores()
-  }
-  function formatarNumero(numero) {
-    return numero.toString().padStart(2, '0');
-  }
-
-  // Chama a função principal para criar os options das listas e capturar os valores assim que a página carregar
-  window.onload = function () {
-    createOptions();
-  };
-  /* ---------------------------------------------------------------------
-  ------------------------------------------------------------------------
-  ------------------------------------------------------------------------
-  ------------------------------------------------------------------------
-   */
-
-
-  function atualizarCronometro(segundos) {
-    let minutos = Math.floor(segundos / 60); // calcula os minutos restantes
-    let segundosStr = String(segundos % 60).padStart(2, "0"); // formata os segundos como string com dois dígitos
-    let minutosStr = String(minutos).padStart(2, "0");
-
-    let tempoStr = `${minutosStr}:${segundosStr}`; // cria a string de tempo no formato "mm:ss"
-
-    document.querySelector(".tempo-principal").textContent = tempoStr; // atualiza o cronômetro na página
-  }
-
-
-
-  function rodarExercicios(arrayExercicios) {
-    return new Promise((resolve, reject) => {
-      let indiceExercicio = 0; // índice do exercício atual
-
-      function executarProximoExercicio() {
-        const exercicioAtual = arrayExercicios[indiceExercicio];
-        const nomeExercicio = exercicioAtual.nome;
-        const tempoExercicio = exercicioAtual.tempo;
-
-        let segundosRestantes = tempoExercicio;
-          
-        const intervalId = setInterval(() => {
-          segundosRestantes--;
-          atualizarCronometro(segundosRestantes);
-
-          if (segundosRestantes <= 0) {
-
-            clearInterval(intervalId);
-
-            indiceExercicio++;
-
-            if (indiceExercicio < arrayExercicios.length) {
-              setTimeout(() => {
-
-                if (arrayExercicios[indiceExercicio].nome === "descanso") { 
-                  atualizaQuandoDescanso(tempoExercicio)
-                  audioDescansar.play();
-                } else {
-                  atualizaQuandoExercicio(tempoExercicio)
-                  audioExercicio.play();
-                }
-
-                executarProximoExercicio();
-              }, 1000);
-            } else {
-          
-              resolve();
-            }
-          }
-        }, 1000);
-      }
-      executarProximoExercicio();
-    });
-  }
-  function atualizaQuandoDescanso(segundos) {
-
-
-    const minutosStr = numeroPadrao(segundos)
-
-    nomePrincipal.innerHTML = 'DESCANSAR'
-    nomePrincipal.style.color = 'white'
-    tempoPrincipal.style.color = 'white'
-    divPrincipal.style.backgroundColor = '#F93232'
-
-    nomeSecundario.innerHTML = 'EXERCÍCIO'
-    nomeSecundario.style.color = 'black'
-    tempoSecundario.style.color = 'black'
-    divSecundaria.style.backgroundColor = '#58CD2F'
-    tempoSecundario.textContent = minutosStr
-  }
-  function atualizaQuandoExercicio(segundos) {
-
-    const minutosStr = numeroPadrao(segundos)
-
-
-    nomePrincipal.innerHTML = 'EXERCÍCIO'
-    nomePrincipal.style.color = 'black'
-    tempoPrincipal.style.color = 'black'
-    divPrincipal.style.backgroundColor = '#58CD2F'
-
-
-    nomeSecundario.innerHTML = 'DESCANSAR'
-    nomeSecundario.style.color = 'white'
-    tempoSecundario.style.color = 'white'
-    divSecundaria.style.backgroundColor = '#F93232'
-    tempoSecundario.textContent = minutosStr
-  }
-
-  function numeroPadrao(segundos) {
-    let minutos = Math.floor(segundos / 60); // calcula os minutos restantes
-    let segundosStr = String(segundos % 60).padStart(2, "0"); // formata os segundos como string com dois dígitos
-    let minutosStr = String(minutos).padStart(2, "0");
-
-    return `${minutosStr}:${segundosStr}`; // cria a string de tempo no formato "mm:ss"
-  }
-
-  function resetaValores() {
-/*     exercicioQuantidade = ''
-    exercicioMinutos = "";
-    exercicioSegundos = "";
-    descansoMinutos = "";
-    descansoSegundos = "";
-    secoesQuantidade = ""; */
-
-
-
-
-    nomePrincipal.innerHTML = 'EXERCÍCIO'
-    nomePrincipal.style.color = 'black'
-    tempoPrincipal.style.color = 'black'
-    divPrincipal.style.backgroundColor = '#58CD2F'
-
-    nomeSecundario.innerHTML = 'DESCANSAR'
-    nomeSecundario.style.color = 'white'
-    tempoSecundario.style.color = 'white'
-    divSecundaria.style.backgroundColor = '#F93232'
-    tempoSecundario.textContent = '00:00'
-
-    botao.textContent = 'INICIAR';
-    botao.classList.remove('parar');
-    botao.classList.add('iniciar');
-    botao.onclick = iniciar;
-
-  }
-  function parar() {
-    location.reload();
-  }
-
-</script>
+<script src="js/globais.js"></script>
+<script src="js/selects.js"></script>
+<script src="js/treino.js"></script>
 
 </html>
