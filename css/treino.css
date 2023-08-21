@@ -1,77 +1,77 @@
 @font-face {
-    font-family: 'Fjalla One';
-    src: url('assets/fonts/Fjalla_One/FjallaOne-Regular.ttf') format('ttf');
-    /* Adicione outros formatos de fonte aqui, se necessário */
+  font-family: 'Fjalla One';
+  src: url('assets/fonts/Fjalla_One/FjallaOne-Regular.ttf') format('ttf');
+  /* Adicione outros formatos de fonte aqui, se necessário */
 
-    font-family: 'Inter';
-    src: url('assets/fonts/Inter_Bold/Inter-Bold.ttf') format('ttf');
-  }
+  font-family: 'Inter';
+  src: url('assets/fonts/Inter_Bold/Inter-Bold.ttf') format('ttf');
+}
 
-  .treinamento {
-    color: white;
-  }
+.treinamento {
+  color: white;
+}
 
-  .painel-tempo {
+.painel-tempo {
   /*   width: 600px;
     margin: 75px 60px; */
-    width: 600px;
-    padding: 75px 20px;
-  }
+  /*     width: 600px; */
+  padding: 75px 20px;
+}
 
-  .principal {
-    height: 300px;
-    padding: 40px 0px;
-    display: flex;
-    color: black;
-    background: #58CD2F;
-    flex-direction: column;
-    align-items: center;
-  }
+.principal {
+  height: 300px;
+  padding: 40px 0px;
+  display: flex;
+  color: black;
+  background: #58CD2F;
+  flex-direction: column;
+  align-items: center;
+}
 
-  .nome-principal {
-    font-weight: 700;
-    font-size: 45px;
-    font-family: 'Inter', sans-serif;
-  }
+.nome-principal {
+  font-weight: 700;
+  font-size: 45px;
+  font-family: 'Inter', sans-serif;
+}
 
-  .tempo-principal {
-    line-height: 136px;
-    font-size: 150px;
-  }
+.tempo-principal {
+  line-height: 136px;
+  font-size: 150px;
+}
 
-  .secundario {
-    height: 200px;
-    padding: 40px 0px;
-    display: flex;
-    color: white;
-    flex-direction: column;
-    align-items: center;
-    background: #F93232;
-  }
+.secundario {
+  height: 200px;
+  padding: 40px 0px;
+  display: flex;
+  color: white;
+  flex-direction: column;
+  align-items: center;
+  background: #F93232;
+}
 
-  .nome-secundario {
-    font-weight: 700;
-    font-size: 30px;
-    font-family: 'Inter', sans-serif;
-  }
+.nome-secundario {
+  font-weight: 700;
+  font-size: 30px;
+  font-family: 'Inter', sans-serif;
+}
 
-  .tempo-secundario {
-    line-height: 95px;
-    font-size: 90px;
-  }
+.tempo-secundario {
+  line-height: 95px;
+  font-size: 90px;
+}
 
-  .valor-tempo {
-    font-weight: 600;
-    font-family: 'Fjalla One', sans-serif;
-  }
+.valor-tempo {
+  font-weight: 600;
+  font-family: 'Fjalla One', sans-serif;
+}
 
-  .secoes {
-    display: flex;
-    justify-content: space-between;
-    color: #FFB800;
-    font-weight: 700;
-    font-size: 40px;
-    line-height: 48.41px;
-    font-family: 'Inter', sans-serif;
-    margin: 5px 0px;
-  }
+.secoes {
+  display: flex;
+  justify-content: space-between;
+  color: #FFB800;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 48.41px;
+  font-family: 'Inter', sans-serif;
+  margin: 5px 0px;
+}
