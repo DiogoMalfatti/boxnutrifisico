@@ -1,3 +1,4 @@
+
 function toggleAcao() {
   if (botao.textContent === "INICIAR") {
     if (this.validacao) {

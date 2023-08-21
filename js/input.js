@@ -1,3 +1,4 @@
+let botao = document.getElementById("botao");
 function valoresIniciais() {
   passandoParseInt();
   secoesElement.querySelector(".secoes-titulo").textContent =
@@ -12,7 +13,6 @@ function valoresIniciais() {
     descansoMinutos * 60 + descansoSegundos,
     ".tempo-secundario"
   );
-
 }
 
 function verificarValoresCampos() {
@@ -28,17 +28,13 @@ function verificarValoresCampos() {
     parseInt(exercicioQuantidade) < 1 ||
     parseInt(secoesQuantidade) < 1
   ) {
+    botao.setAttribute("disabled", true);
     validacao = false;
     return;
   }
   validacao = true;
   valoresIniciais();
-  const botao = document.getElementById("botao");
-  if (validacao) {
-    botao.removeAttribute("disabled"); // Ativa o botão se as validações forem verdadeiras
-  } else {
-    botao.setAttribute("disabled", true); // Desativa o botão se as validações forem falsas
-  }
+  botao.removeAttribute("disabled"); // Ativa o botão se as validações forem verdadeiras
 }
 
 let timeInputs = document.querySelectorAll(".timeInput");
