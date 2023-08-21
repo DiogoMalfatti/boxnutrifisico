@@ -1,142 +1,149 @@
 .c-row-config {
-    height: 88vh;
-  }
+  height: 88vh;
+}
 
-  .logo {
-    display: flex;
-    justify-content: center;
-    margin: 25px 0px;
-  }
+.logo {
+  display: flex;
+  justify-content: center;
+  margin: 25px 0px;
+}
 
-  .logo img {
-    width: 100px;
-    height: 100px;
+.logo img {
+  width: 100px;
+  height: 100px;
 
-  }
+}
 
-  .config {
-    background: #323232;
-    color: white;
-    padding-left: 0px;
-    padding-right: 0px;
-    min-width: 300px;
-  }
+.config {
+  background: #323232;
+  color: white;
+  padding-left: 0px;
+  padding-right: 0px;
+  min-width: 300px;
+}
 
-  .c-container-list {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-    margin-bottom: 80px;
-    padding: 0px 5px;
-  }
+.c-container-list {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin-bottom: 80px;
+  padding: 0px 5px;
+}
 
-  .list {
-    position: relative;
-    display: flex;
-    gap: 10px;
-    width: 100%;
-    padding: 0px 15px;
-    justify-content: space-between;
-  }
+.list {
+  position: relative;
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  padding: 0px 15px;
+  justify-content: space-between;
+}
 
-  .bolinhaETitulo {
-    display: flex;
-    gap: 10px;
-  }
+.bolinhaETitulo {
+  display: flex;
+  gap: 10px;
+}
 
-  .list::before {
-    content: '';
-    position: absolute;
-    bottom: -12px;
-    width: 100%;
-    height: 3px;
-    background-color: #1E1E1E;
-  }
+.list::before {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  width: 100%;
+  height: 3px;
+  background-color: #1E1E1E;
+}
 
-  .bolinha {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-  }
+.bolinha {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
 
-  .blue {
-    background: #0407db;
-  }
+.blue {
+  background: #0407db;
+}
 
-  .green {
-    background: green;
-  }
+.green {
+  background: green;
+}
 
-  .red {
-    background: red;
-  }
+.red {
+  background: red;
+}
 
-  .yellow {
-    background: yellow;
-  }
+.yellow {
+  background: yellow;
+}
 
-  .botao-iniciar {
-    display: flex;
-    justify-content: center;
-    font-weight: 700;
-    cursor: pointer;
-    font-size: 32px;
-    background-color: #58CD2F;
-  }
-  .iniciar {
-    background-color: #58CD2F;
+.botao-iniciar[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.botao-iniciar {
+  display: flex;
+  justify-content: center;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 32px;
+  color: black;
+  background-color: #58CD2F;
+}
+
+.iniciar {
+  background-color: #58CD2F;
 }
 
 .parar {
-    background-color: #F93232;
+  background-color: #F93232;
+  color: white;
 }
-  .accordion-button {
-    color: white;
-    background-color: #323232;
-    padding: 14px 0px;
-  }
 
-  .accordion-button:not(.collapsed) {
-    color: white;
-    background: #323232;
-  }
+.accordion-button {
+  color: white;
+  background-color: #323232;
+  padding: 14px 0px;
+}
 
-  .accordion-button:not(.collapsed)::after {}
+.accordion-button:not(.collapsed) {
+  color: white;
+  background: #323232;
+}
 
-  .accordion-item {
-    border: unset;
-  }
+.accordion-item {
+  border: unset;
+}
 
-  .accordion-body {
-    display: flex;
-    background: #323232;
-    padding: 5px 5px;
-    justify-content: space-evenly;
-  }
+.accordion-body {
+  display: flex;
+  background: #323232;
+  padding: 5px 5px;
+  justify-content: space-evenly;
+}
 
-  .form-select {
-    color: white;
-    background: #323232;
-    border: unset;
-    border-radius: 0px;
-    text-align: center;
-    padding: unset;
-  }
+.form-select {
+  color: white;
+  background: #323232;
+  border: unset;
+  border-radius: 0px;
+  text-align: center;
+  padding: unset;
+}
 
-  .accordion-button:focus {
-    box-shadow: unset;
-  }
+.accordion-button:focus {
+  box-shadow: unset;
+}
 
-  .form-select:focus {
-    box-shadow: unset;
-  }
+.form-select:focus {
+  box-shadow: unset;
+}
 
-  .accordion {
-    --bs-accordion-border-color: unset
-  }
+.accordion {
+  --bs-accordion-border-color: unset
+}
 
-  .selects {
+.selects {
 
-    color: white;
-    display: flex;
-  }
+  color: white;
+  display: flex;
+}

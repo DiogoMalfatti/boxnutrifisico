@@ -1,25 +1,30 @@
 function toggleAcao() {
   if (botao.textContent === "INICIAR") {
-    iniciar();
-    botao.textContent = "PARAR";
-    botao.classList.remove("iniciar");
-    botao.classList.add("parar");
-    botao.onclick = parar;
+    if (this.validacao) {
+      iniciar();
+      botao.textContent = "PARAR";
+      botao.classList.remove("iniciar");
+      botao.classList.add("parar");
+      botao.onclick = parar;
+    }
   } else {
     parar();
     botao.textContent = "INICIAR";
     botao.classList.remove("parar");
     botao.classList.add("iniciar");
     botao.onclick = iniciar;
+    resetaValores();
+    validacao = false;
   }
 }
+
 async function iniciar() {
-  await construindoConfiguracaoDoTreino();
+  construindoConfiguracaoDoTreino();
   const dadosTreino = JSON.parse(localStorage.getItem("dadosTreino"));
 
   for (let i = 0; i < dadosTreino.quantidadeSecoes; i++) {
-    const secoesElement = document.querySelector(".secoes");
-    const secoesValorElement = secoesElement.querySelector(".secoes-valor");
+    secoesElement = document.querySelector(".secoes");
+    secoesValorElement = secoesElement.querySelector(".secoes-valor");
     secoesElement.querySelector(".secoes-titulo").textContent =
       dadosTreino.quantidadeSecoes === 1 ? "SEÇÃO" : "SEÇÕES";
     secoesValorElement.textContent = `${formatarNumero(i + 1)}/${formatarNumero(
@@ -30,22 +35,26 @@ async function iniciar() {
 
     await rodarExercicios(dadosTreino.exercicios);
   }
+  parar();
   resetaValores();
 }
 function formatarNumero(numero) {
   return numero.toString().padStart(2, "0");
 }
 
-function atualizarCronometro(segundos) {
+function atualizarCronometro(segundos, elemento = ".tempo-principal") {
+  let tag = elemento;
   let minutos = Math.floor(segundos / 60); // calcula os minutos restantes
   let segundosStr = String(segundos % 60).padStart(2, "0"); // formata os segundos como string com dois dígitos
   let minutosStr = String(minutos).padStart(2, "0");
-
   let tempoStr = `${minutosStr}:${segundosStr}`; // cria a string de tempo no formato "mm:ss"
-
-  document.querySelector(".tempo-principal").textContent = tempoStr; // atualiza o cronômetro na página
+  atualizaCronometroElemento(tempoStr, tag);
+  /*   document.querySelector(".tempo-principal").textContent = tempoStr; // atualiza o cronômetro na página
+   */
 }
-
+function atualizaCronometroElemento(tempoStr, elemento) {
+  document.querySelector(elemento).textContent = tempoStr; // atualiza o cronômetro na página
+}
 function rodarExercicios(arrayExercicios) {
   return new Promise((resolve, reject) => {
     let indiceExercicio = 0; // índice do exercício atual

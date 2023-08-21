@@ -75,3 +75,14 @@
   font-family: 'Inter', sans-serif;
   margin: 5px 0px;
 }
+
+.numberInput {
+  width: 30px;
+}
+
+.input {
+  width: 47px;
+  color: white;
+  background: #323232;
+  border: unset;
+}

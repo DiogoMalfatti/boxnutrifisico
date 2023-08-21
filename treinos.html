@@ -71,8 +71,11 @@
               QUANTOS EXERCÍCIOS ?
             </div>
             <div class="selects">
-              <select class="form-select" id="quantity-exercise" aria-label="Minutos">
-              </select>
+              <input style="text-align: end;" type="text" id="quantity-exercise" class="quantityInput input"
+                pattern="\d{2}" maxlength="2" placeholder="00">
+
+              <!-- <select class="form-select" id="quantity-exercise" aria-label="Minutos">
+              </select> -->
             </div>
           </div>
           <div class="list">
@@ -81,14 +84,14 @@
               EXERCÍCIO
             </div>
             <div class="selects">
-
-              <select style="text-align: end;" class="form-select minutesSelect" id="exercise-minutes-select"
+              <!--               <input type="text" class="numberInput inputMinute" maxlength="2">
+              <input type="text" class="numberInput inputSecond" maxlength="2"> -->
+              <input type="text" id="exerciseTime" class="timeInput input" pattern="\d{4}" maxlength="4"
+                placeholder="00:00">
+              <!--               <select style="text-align: end;" class="form-select minutesSelect" id="exercise-minutes-select"
                 aria-label="Minutos">
               </select>:
-              <select class="form-select secondsSelect" id="exercise-seconds-select" aria-label="Segundos">
-            </div>
-            <div class="selects">
-              </select>
+              <select class="form-select secondsSelect" id="exercise-seconds-select" aria-label="Segundos">    </select> -->
             </div>
           </div>
           <div class="list">
@@ -96,21 +99,27 @@
               <div class="bolinha red"></div>DESCANSO
             </div>
             <div class="selects">
-              <select class="form-select minutesSelect" id="rest-minutes-select" aria-label="Minutos">
+              <input type="text" id="restTime" class="timeInput input" pattern="\d{4}" maxlength="4"
+                placeholder="00:00">
+
+              <!--               <select class="form-select minutesSelect" id="rest-minutes-select" aria-label="Minutos">
               </select>:
               <select class="form-select secondsSelect" id="rest-seconds-select" aria-label="Segundos">
-              </select>
+              </select> -->
             </div>
           </div>
           <div class="list">
             <div class="bolinhaETitulo">
               <div class="bolinha yellow"></div>SEÇÕES
             </div>
-            <select style="text-align: end;" class="form-select" id="quantity-sections" aria-label="Minutos">
-            </select>
+            <input style="text-align: end;" type="text" id="quantity-sections" class="quantityInput input"
+              pattern="\d{2}" maxlength="2" placeholder="00">
+
+            <!--  <select style="text-align: end;" class="form-select" id="quantity-sections" aria-label="Minutos">
+            </select> -->
           </div>
         </div>
-        <div class="botao-iniciar" id="botao" onclick="toggleAcao()">INICIAR</div>
+        <div class="botao-iniciar" id="botao" onclick="toggleAcao()" disabled>INICIAR</div>
       </div>
       <!-- Cronômetro -->
       <div class="col treinamento">
@@ -125,7 +134,7 @@
           </div>
           <div class="secoes">
             <div class="secoes-titulo">SEÇÃO</div>
-            <div class="secoes-valor">01/03</div>
+            <div class="secoes-valor">00/00</div>
           </div>
         </div>
       </div>
@@ -159,9 +168,8 @@
   </div>
 </body>
 
-
 <script src="js/globais.js"></script>
-<script src="js/selects.js"></script>
+<script src="js/input.js"></script>
 <script src="js/treino.js"></script>
 
 </html>

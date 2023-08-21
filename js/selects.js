@@ -1,4 +1,4 @@
-function selectQuantidadeDeExercicios() {
+/* function selectQuantidadeDeExercicios() {
     const selectElement = document.getElementById('quantity-exercise');
 
     for (let i = 1; i <= 60; i++) {
@@ -150,4 +150,4 @@ function selectQuantidadeDeExercicios() {
   }
   window.onload = function () {
     createOptions();
-  };
+  }; */
