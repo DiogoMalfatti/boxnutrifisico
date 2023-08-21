@@ -64,7 +64,7 @@
 }
 
 .green {
-  background: green;
+  background: #58CD2F;
 }
 
 .red {
@@ -73,6 +73,10 @@
 
 .yellow {
   background: yellow;
+}
+
+.blue-2 {
+  background: #3eacea;
 }
 
 .botao-iniciar[disabled] {

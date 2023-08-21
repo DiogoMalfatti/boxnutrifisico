@@ -68,7 +68,7 @@
           <div class="list">
             <div class="bolinhaETitulo">
               <div class="bolinha blue"></div>
-              QUANTOS EXERCÍCIOS ?
+              CICLOS
             </div>
             <div class="selects">
               <input style="text-align: end;" type="text" id="quantity-exercise" class="quantityInput input"
@@ -118,6 +118,15 @@
             <!--  <select style="text-align: end;" class="form-select" id="quantity-sections" aria-label="Minutos">
             </select> -->
           </div>
+          <div class="list">
+            <div class="bolinhaETitulo">
+              <div class="bolinha blue-2"></div>DESCANSO ENTRE SEÇÕES
+            </div>
+            <div class="selects">
+              <input type="text" id="tempo-entre-secoes" class="timeInput input" pattern="\d{4}" maxlength="4"
+                placeholder="00:00">
+            </div>
+          </div>
         </div>
         <div class="botao-iniciar" id="botao" onclick="toggleAcao()" disabled>INICIAR</div>
       </div>
@@ -131,6 +140,10 @@
           <div class="secundario">
             <div class="nome-secundario">TROCAR DE EXERCÍCIO</div>
             <div class="tempo-secundario valor-tempo">00:00</div>
+          </div>
+          <div class="entre-secoes hidden">
+            <div class="nome-entre-secoes">DESCANSO ENTRE SEÇÕES</div>
+            <div class="tempo-entre-secoes valor-tempo">00:00</div>
           </div>
           <div class="secoes">
             <div class="secoes-titulo">SEÇÃO</div>

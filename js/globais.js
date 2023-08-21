@@ -20,3 +20,6 @@ let tempoSecundario = document.querySelector(".tempo-secundario");
 let divSecundaria = document.querySelector(".secundario");
 let secoesElement = document.querySelector(".secoes");
 let secoesValorElement = secoesElement.querySelector(".secoes-valor");
+
+
+let entreSecoes = document.querySelector(".entre-secoes");

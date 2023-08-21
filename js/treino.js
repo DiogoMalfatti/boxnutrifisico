@@ -1,4 +1,3 @@
-
 function toggleAcao() {
   if (botao.textContent === "INICIAR") {
     if (this.validacao) {
@@ -18,7 +17,21 @@ function toggleAcao() {
     validacao = false;
   }
 }
+function tempoEntreSecoes(segundos) {
+  return new Promise((resolve) => {
+    let segundosRestantes = segundos;
 
+    const intervalId = setInterval(() => {
+      segundosRestantes--;
+      atualizarCronometro(segundosRestantes, ".tempo-entre-secoes"); // Atualiza o cronômetro secundário
+
+      if (segundosRestantes <= 0) {
+        clearInterval(intervalId);
+        resolve();
+      }
+    }, 1000);
+  });
+}
 async function iniciar() {
   construindoConfiguracaoDoTreino();
   const dadosTreino = JSON.parse(localStorage.getItem("dadosTreino"));
@@ -35,9 +48,27 @@ async function iniciar() {
     audio321.play();
 
     await rodarExercicios(dadosTreino.exercicios);
+
+    if (i < dadosTreino.quantidadeSecoes - 1) {
+      exibirEntreSecoes(dadosTreino.tempoEntreSecoes);
+      await tempoEntreSecoes(dadosTreino.tempoEntreSecoes);
+      esconderEntreSecoes();
+    }
   }
   parar();
   resetaValores();
+}
+function exibirEntreSecoes(segundos) {
+  divPrincipal.classList.add("hidden");
+  divSecundaria.classList.add("hidden");
+  entreSecoes.classList.remove("hidden");
+
+  atualizarCronometro(segundos, ".tempo-entre-secoes");
+}
+function esconderEntreSecoes() {
+  divPrincipal.classList.remove("hidden");
+  divSecundaria.classList.remove("hidden");
+  entreSecoes.classList.add("hidden");
 }
 function formatarNumero(numero) {
   return numero.toString().padStart(2, "0");

@@ -86,3 +86,29 @@
   background: #323232;
   border: unset;
 }
+
+.entre-secoes {
+  display: flex;
+  height: 500px;
+  padding: 40px 0px;
+  color: black;
+  background: #3eacea;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.nome-entre-secoes {
+  font-weight: 700;
+  font-size: 45px;
+  font-family: 'Inter', sans-serif;
+}
+
+.tempo-entre-secoes {
+  line-height: 136px;
+  font-size: 150px;
+  font-family: 'Fjalla One', sans-serif;
+}
+.hidden {
+  display: none;
+}

@@ -23,6 +23,8 @@ function verificarValoresCampos() {
     exercicioSegundos.length !== 2 ||
     descansoMinutos.length !== 2 ||
     descansoSegundos.length !== 2 ||
+    entreSecoesTempoMinutos.length !== 2 ||
+    entreSecoesTempoSegundos.length !== 2 ||
     (exercicioQuantidade.length !== 1 && exercicioQuantidade.length !== 2) ||
     (secoesQuantidade.length !== 1 && secoesQuantidade.length !== 2) ||
     parseInt(exercicioQuantidade) < 1 ||
@@ -82,12 +84,13 @@ function updateVariables() {
   descansoSegundos = document.getElementById("restTime").value.substring(3, 5);
   exercicioQuantidade = document.getElementById("quantity-exercise").value;
   secoesQuantidade = document.getElementById("quantity-sections").value;
-  /*   console.log("Exercício - Minutos:", exercicioMinutos);
-  console.log("Exercício - Segundos:", exercicioSegundos);
-  console.log("Descanso - Minutos:", descansoMinutos);
-  console.log("Descanso - Segundos:", descansoSegundos);
-  console.log("Quantidade de Exercícios:", exercicioQuantidade);
-  console.log("Quantidade de seções:", secoesQuantidade); */
+
+  entreSecoesTempoMinutos = document
+    .getElementById("tempo-entre-secoes")
+    .value.substring(0, 2);
+  entreSecoesTempoSegundos = document
+    .getElementById("tempo-entre-secoes")
+    .value.substring(3, 5);
 }
 function passandoParseInt() {
   exercicioQuantidade = parseInt(exercicioQuantidade);
@@ -96,23 +99,21 @@ function passandoParseInt() {
   descansoMinutos = parseInt(descansoMinutos);
   descansoSegundos = parseInt(descansoSegundos);
   secoesQuantidade = parseInt(secoesQuantidade);
+  entreSecoesTempoMinutos = parseInt(entreSecoesTempoMinutos);
+  entreSecoesTempoSegundos = parseInt(entreSecoesTempoSegundos);
 }
 
 function construindoConfiguracaoDoTreino() {
   passandoParseInt();
-  /*   console.log("exercicioQuantidade", exercicioQuantidade);
-  console.log("exercicioMinutos", exercicioMinutos);
-  console.log("exercicioSegundos", exercicioSegundos);
-  console.log("descansoMinutos", descansoMinutos);
-  console.log("descansoSegundos", descansoSegundos);
-  console.log("secoesQuantidade", secoesQuantidade); */
   const totalTempoExercicio = exercicioMinutos * 60 + exercicioSegundos;
   const totalTempoDescanso = descansoMinutos * 60 + descansoSegundos;
-
+  const tempoEntreSecoes =
+    entreSecoesTempoMinutos * 60 + entreSecoesTempoSegundos;
   const configuracoes = {
     quantidadeSecoes: secoesQuantidade,
     tempoExercicio: totalTempoExercicio,
     tempoDescanso: totalTempoDescanso,
+    tempoEntreSecoes: tempoEntreSecoes,
   };
 
   let exercicios = [];
